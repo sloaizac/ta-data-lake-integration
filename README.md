@@ -1,5 +1,10 @@
 # ta-data-lake-integration
 
+## Description
+Due to the fact that there have been multiple problems when testing the data load to Snowflake within the project in which the company is currently working, which has caused us on several occasions delays in the delivery of the development tasks for the different improvements requested to the platform since it is not possible to perform these data load tests before deploying to other development environments, it is necessary to integrate the test environments through an API that allows us to make requests through the existing ta-warehouse microservice to a Snowflake account previously assigned for testing and thus avoid delays and implement more quickly the necessary improvements or corrections each time a change is made within the project related to the data load to Snowflake.
+
+This application expose a API from AWS API Gateway and Lambda functions to insert records in snowflake databases and update schemas, connecting to snowflake through http request from AWS Lambda functions.
+
 ## Setup
 
 ### Prerequisites
@@ -7,7 +12,7 @@
   - Snowflake account
   
 ### Deploy AWS Lambda function
-  - Download ta-data-lake-integration repository
+  - Download ta-data-lake-integration repository, go to Snowflake integration section and replace variables in scripts
   - Download and install aws-cli (Guide:  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
   - Create a execution role and policy from command line:
   
@@ -61,6 +66,21 @@
   
   
 ### Snowflake integration
+
+  #### Generate rsa keys
+  
+  <pre><code>openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out snowflake_rsa_key.p8</code></pre>
+  
+  <pre><code>openssl rsa -in snowflake_rsa_key.p8 -pubout -out rsa_key.pub</code></pre>
+  
+  #### Set rsa key
+  - In a snowflake worksheet execute:
+  
+  <pre><code>ALTER USER <username> SET RSA_PUBLIC_KEY=<public_key></code></pre>
+  
+  - Check RSA_PUBLIC_KEY and RSA_PUBLIC_KEY_FP
+  
+  <pre><code>DESC USER <username></code></pre>
 
 
   
