@@ -76,11 +76,11 @@ This application expose a API from AWS API Gateway and Lambda functions to inser
   #### Set rsa key
   - In a snowflake worksheet execute:
   
-  <pre><code>ALTER USER <username> SET RSA_PUBLIC_KEY=<public_key></code></pre>
+  <pre><code>ALTER USER <username> SET RSA_PUBLIC_KEY='<public_key>'</code></pre>
   
   - Check RSA_PUBLIC_KEY and RSA_PUBLIC_KEY_FP
   
-  <pre><code>DESC USER <username> </code></pre>
+  <pre><code>DESC USER '<username>'</code></pre>
 
 
   
