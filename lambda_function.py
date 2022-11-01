@@ -122,7 +122,7 @@ def handle_insert(event, store):
                 "warehouse": "TEST_WAREHOUSE", #Change TEST_WAREHOUSE to your warehouse name
                 "role": "ACCOUNTADMIN"         #Change to your snowflake role
             }
-            snowflake_response = requests.post('https://<your_account_name>.snowflakecomputing.com/api/v2/statements', data=json.dumps(body) , headers=headers)
+            snowflake_response = requests.post('https://<account_identifier>.snowflakecomputing.com/api/v2/statements', data=json.dumps(body) , headers=headers)
             response['query_to_snowflake'] = query
             if snowflake_response.status_code() != 200:
                 logs.append({
