@@ -12,7 +12,7 @@ This application expose a API from AWS API Gateway and Lambda functions to inser
   - Snowflake account
   
 ### Deploy AWS Lambda function
-  - Download ta-data-lake-integration repository, go to Snowflake integration section and replace variables in scripts
+  - Download ta-data-lake-integration repository, go to [snowflake integration](#snowflake-integration) and replace variables in scripts
   - Download and install aws-cli (Guide:  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
   - Create a execution role and policy from command line:
   
@@ -76,11 +76,11 @@ This application expose a API from AWS API Gateway and Lambda functions to inser
   #### Set rsa key
   - In a snowflake worksheet execute:
   
-  <pre><code>ALTER USER <username> SET RSA_PUBLIC_KEY='<public_key>'</code></pre>
+  <pre><code>ALTER USER <username> SET RSA_PUBLIC_KEY='your_public_key'</code></pre>
   
   - Check RSA_PUBLIC_KEY and RSA_PUBLIC_KEY_FP
   
-  <pre><code>DESC USER '<username>'</code></pre>
+  <pre><code>DESC USER your_username </code></pre>
 
 
   
