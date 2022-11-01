@@ -30,34 +30,41 @@
   #### Create API Gateway
   1. Sign in to the API Gateway console at https://console.amazonaws.cn/apigateway.
   2. Choose Create API, and then for HTTP API, choose Build.
-  3. For API name, enter data-lake-integration-api.
+  3. For API name, enter **data-lake-integration-api**.
   4. Choose Next.
   5. For Configure routes, choose Next to skip route creation. You create routes later.
   6. Review the stage that API Gateway creates for you, and then choose Next.
   7. Choose Create.
     
   #### Create routes
-  1. Choose Routes.
+  1. Choose **Routes**.
   2. Choose Create.
-  3. For method, choose POST.
-  4. For the path, enter /data-lake-gateway/insert.
+  3. For method, choose **POST**.
+  4. For the path, enter **/data-lake-gateway/insert.
   5. Choose Create.
-  6. Repeat steps 2-5 for PUT /data-lake-gateway/schema.
+  6. Repeat steps 2-5 for **PUT /data-lake-gateway/schema**.
     
   #### Create integration
-  1. Choose Integrations.
+  1. Choose **Integrations**.
   2. Choose Manage integrations and then choose Create.
   3. Skip Attach this integration to a route. You complete that in a later step.
-  4. For Integration type, choose Lambda function.
-  5. For Lambda function, enter data-lake-integration.
+  4. For Integration type, choose **Lambda function**.
+  5. For Lambda function, enter **data-lake-integration**.
   6. Choose Create.
     
   #### Attach integration
-  1. Choose Integrations.
+  1. Choose **Integrations**.
   2. Choose a route.
-  3. Under Choose an existing integration, choose data-lake-integration.
+  3. Under Choose an existing integration, choose **data-lake-integration**.
   4. Choose Attach integration.
   5. Repeat steps 2-4 for all routes.
+  
+  
+### Snowflake integration
+
+
+  
+  
     
  
 
