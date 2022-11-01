@@ -39,7 +39,7 @@ def get_token(current_token, current_exp):
         }
     else:
         # Get the account identifier without the region, cloud provider, or subdomain.
-        account = "<your_account_name>"
+        account = "<account_identifier>"
         if not '.global' in account:
             idx = account.find('.')
             if idx > 0:
