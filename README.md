@@ -80,7 +80,7 @@ This application expose a API from AWS API Gateway and Lambda functions to inser
   
   - Check RSA_PUBLIC_KEY and RSA_PUBLIC_KEY_FP
   
-  <pre><code>DESC USER <username></code></pre>
+  <pre><code>DESC USER <username> </code></pre>
 
 
   
